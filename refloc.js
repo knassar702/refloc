@@ -4,7 +4,7 @@ function x1(target,parameter) {
                 xhttp.onreadystatechange = function() {
                     if (this.readyState == 4 ) {
                         if (this.responseText.includes('refloc>')) {
-                            console.log("%s [refloc>]  %s ",parameter.split('=')[0],target.replace(parameter,parameter))
+                            console.log("%s [refloc>]  %s ",parameter.split('=')[0],target.replace(parameter,parameter + "refloc>"))
                             return 1
                         }
             }
@@ -19,7 +19,7 @@ function x2(target,parameter) {
                 xhttp.onreadystatechange = function() {
                     if (this.readyState == 4 ) {
                         if (this.responseText.includes('refloc<')) {
-                            console.log("%s [refloc<]  %s ",parameter.split('=')[0],target.replace(parameter,parameter))
+                            console.log("%s [refloc<]  %s ",parameter.split('=')[0],target.replace(parameter.split('=')[0],parameter + "refloc<"))
                             return 1
                         }
             }
@@ -34,7 +34,7 @@ function x3(target,parameter) {
                 xhttp.onreadystatechange = function() {
                     if (this.readyState == 4 ) {
                         if (this.responseText.includes('refloc"')) {
-                            console.log('%s [refloc"]  %s ',parameter.split('=')[0],target.replace(parameter,parameter))
+                            console.log('%s [refloc"]  %s ',parameter.split('=')[0],target.replace(parameter,parameter + 'refloc"'))
                             return 1
                         }
             }
@@ -49,7 +49,7 @@ function x4(target,parameter) {
                 xhttp.onreadystatechange = function() {
                     if (this.readyState == 4 ) {
                         if (this.responseText.includes("refloc'")) {
-                            console.log("%s [refloc']  %s  ",parameter.split('=')[0],target.replace(parameter,parameter))
+                            console.log("%s [refloc']  %s  ",parameter.split('=')[0],target.replace(parameter,parameter + "refloc'"))
                             var xss
                         }
             }
@@ -88,4 +88,3 @@ function start_scan() {
 	}
   }
 }
-start_scan()
