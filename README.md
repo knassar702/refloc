@@ -3,3 +3,14 @@ Chrome extension for find `"'<>` chars in reflected parameters [(KXSS)](https://
 
 
 <img src='screen.png'>
+
+
+### Start
+* open chrome console
+* select Refloc
+
+```
+> start_scan()
+
+PARAMETR [refloc"] URL
+```
